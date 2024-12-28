@@ -1,0 +1,220 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #000;
+    color: #fff;
+  }
+  
+  .home {
+    text-align: left;
+  }
+  
+  /* Banner Section */
+  .banner {
+    position: relative;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+  
+  .banner-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    z-index: 1;
+  }
+  
+  .banner-content {
+    position: relative;
+    z-index: 2;
+    background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.5));
+    padding: 20px;
+  }
+  
+  .series-title {
+    font-size: 3rem;
+    margin: 0;
+  }
+  
+  .series-meta {
+    font-size: 1.2rem;
+    color: #fff;
+    margin: 10px 0;
+  }
+  
+  .series-tags {
+    font-size: 0.9rem;
+    color: #fff;
+  }
+  
+  .banner-buttons {
+    margin: 20px 0;
+    display: flex;
+    gap: 10px;
+  }
+  
+  .play-button, .add-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .play-button {
+    background-color: #fff;
+    color: #000;
+  }
+  
+  .play-button:hover {
+    background-color: #e6e6e6;
+  }
+  
+  .add-button {
+    background-color: rgba(255, 255, 255, 0.3);
+    color: #fff;
+  }
+  
+  .add-button:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+  
+  .series-description {
+    font-size: 1rem;
+    color: #ccc;
+  }
+  
+  /* Metadata Section */
+  .show-info {
+    padding: 20px;
+    font-size: 1rem;
+    color: #aaa;
+  }
+  
+  .show-info p {
+    margin: 5px 0;
+  }
+  
+  .more {
+    color: #ff2052;
+    cursor: pointer;
+  }
+  
+  /* Episodes Section */
+  .episodes {
+    padding: 20px;
+  }
+  
+  /* Episode Section */
+.episodes-section {
+    padding: 20px;
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+  }
+  
+  .episodes-section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  /* Episode List */
+  .episode-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  /* Episode Card */
+  .episode-card {
+    display: flex;
+    gap: 20px;
+    background-color: #222;
+    border-radius: 10px;
+    padding: 15px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+  
+  .episode-card:hover {
+    transform: scale(1.02);
+  }
+  
+  .episode-card:hover .play-icon {
+    opacity: 1;
+  }
+  /* Thumbnail Wrapper */
+  .thumbnail-wrapper {
+    position: relative;
+  }
+  
+  .episode-thumbnail {
+    width: 160px;
+    height: 90px;
+    border-radius: 5px;
+    object-fit: cover;
+  }
+  
+  .play-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+    color: white;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 50%;
+    padding: 5px 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .thumbnail-wrapper:hover .play-icon {
+    opacity: 1;
+  }
+  
+  /* Episode Details */
+  .episode-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .episode-title {
+    display: flex;
+    margin: 0;
+    font-size: 1.2rem;
+    color: #fff;
+    justify-content: space-between;    
+  }
+  
+  .episode-description {
+    font-size: 0.9rem;
+    color: #fff;
+    margin: 5px 0;
+  }
+  
+  .episode-duration {
+    font-size: 0.9rem;
+    color: #fff;
+    align-self: flex-end;
+  }
+  
+  .maturity-rating {
+    display: inline-block;
+}
+
+.maturity-rating .maturity-number {
+  border: 1px solid hsla(0, 0%, 100%, .4);
+  font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
+  overflow: hidden;
+  padding: 0 .4em;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  unicode-bidi: normal;
+  white-space: nowrap;
+}
