@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { useParams } from "react-router-dom";
 import VideoJS from './VideoJS'; // Import the VideoPlayer component
 import "video.js/dist/video-js.css";
@@ -30,6 +30,7 @@ const episodes = [
 // { id: 7, title: "Friend or Foe", duration: "60m", description: "The remaining players strategize on how to survive the night. Gi-hun proposes a risky plan — but he will need trustworthy allies to carry it out.", thumbnail: ep7, videoUrl: "https://sgs2.duckdns.org/hls/S02e07/master.m3u8" },
 
 const Player = () => {
+  const [hasError, setHasError] = useState(false); // Track if there's an error with the video
   const { episodeId } = useParams()
 
   const episode = episodes.find((ep) => ep.id === parseInt(episodeId, 10));
@@ -79,7 +80,27 @@ const Player = () => {
     player.on('dispose', () => {
       console.log('Player will dispose');
     });
+
+    // Listen for playback errors
+    player.on('error', () => {
+      console.error('Video playback error occurred');
+      setHasError(true); // Trigger error state
+    });
   };
+
+    // Show "Something went wrong" screen if an error occurs
+    if (hasError) {
+      return (
+        <div className="player-error">
+          <h1>{episode.title}</h1>
+          <h2>Something Went Wrong</h2>
+          <p>We were unable to load the video. Please try again later.</p>
+          <button onClick={() => window.location.href = '/'}>Back to Episodes</button>
+        </div>
+      );
+    }
+
+    
   // useEffect(() => {
   //   if (!episode) {
   //     return;
